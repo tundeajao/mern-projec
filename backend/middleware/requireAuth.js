@@ -11,7 +11,7 @@ const requireAuth = async (req, res, next) => {
     }
 
     const token  = authorization.split(' ')[1]
-
+    console.log("Token received:", token); // 👈 check what’s being sent
     try {
         const {_id} = jwt.verify(token, process.env.SECRET)
 
